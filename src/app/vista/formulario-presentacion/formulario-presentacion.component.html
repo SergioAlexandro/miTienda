@@ -1,0 +1,38 @@
+<div class="formulario-presentacion">
+    <mat-form-field appearance="outline" hintLabel="Empaque del producto">
+        <mat-label>Ingresa que tipo de empaque tiene</mat-label>
+        <!-- formControl="empaque" -->
+        <input [(ngModel)]="presentacion.empaque" matInput #empaque maxlength="50" type="text" placeholder="Botella, Lata, Bolsa, etc" required>
+        <mat-icon matSuffix (click)="vaciarCaja($event)">delete</mat-icon>
+        <mat-hint align="end">{{empaque.value?.length || 0}}/50</mat-hint>
+        <!--<mat-error *ngIf="empaque.invalid">{{getError('empaque')}}</mat-error>-->
+    </mat-form-field>
+    <br/>
+    <mat-form-field appearance="outline" hintLabel="cantidad de producto">
+        <mat-label>Ingresa la cantidad de producto que tiene el empaque</mat-label>
+        <input [(ngModel)]="presentacion.cantidad" matInput #cantidad maxlength="6" type="number" placeholder="355, 1, 1.5, etc" required>
+        <mat-icon matSuffix (click)="vaciarCaja($event)">delete</mat-icon>
+        <mat-hint align="end">{{cantidad.value?.length || 0}}/6</mat-hint>
+        <!--<mat-error *ngIf="cantidad.invalid">{{getError('cantidad')}}</mat-error>-->
+    </mat-form-field>
+    <br/>
+    <mat-form-field appearance="outline" hintLabel="Unidad de medida del empaque">
+        <mat-label>Ingresa que unidad de medida presenta el empaque</mat-label>
+        <input [(ngModel)]="presentacion.unidad" matInput #unidad maxlength="5" type="text" placeholder="L, ML, GR, KG" required>
+        <mat-icon matSuffix (click)="vaciarCaja($event)">delete</mat-icon>
+        <mat-hint align="end">{{unidad.value?.length || 0}}/5</mat-hint>
+        <!--<mat-error *ngIf="unidad.invalid">{{getError('unidad')}}</mat-error>-->
+    </mat-form-field>
+    <br/>
+</div>
+
+<br/>
+
+<div class="fab-guardar">
+    <button mat-fab color="primary" (click)="guardarPresentacion()">
+        <!--  -->
+        <mat-icon>
+        save
+        </mat-icon>
+    </button>
+</div>

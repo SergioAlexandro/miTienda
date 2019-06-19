@@ -1,0 +1,22 @@
+<div class="formulario-producto">
+    <mat-form-field appearance="outline" hintLabel="Nombre del producto">
+        <mat-label>Ingresa nombre del producto</mat-label>
+        <!-- formControl="empaque" -->
+        <input [(ngModel)]="producto.nombre" matInput #nombre maxlength="50" type="text" placeholder="Coca-cola, Sabritas, Gamesa, etc" required>
+        <mat-icon matSuffix (click)="vaciarCaja($event)">delete</mat-icon>
+        <mat-hint align="end">{{nombre.value?.length || 0}}/50</mat-hint>
+        <!--<mat-error *ngIf="empaque.invalid">{{getError('empaque')}}</mat-error>-->
+    </mat-form-field>
+    <br/>
+</div>
+
+<br/>
+
+<div class="fab-guardar">
+    <button mat-fab color="primary" (click)="guardarProducto()">
+      <!--  -->
+      <mat-icon>
+      save
+      </mat-icon>
+  </button>
+</div>
